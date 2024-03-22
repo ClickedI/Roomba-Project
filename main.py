@@ -3,25 +3,31 @@ from rclpy.node import Node
 from sensor_msgs.msg import LaserScan
 
 
-def laser_scan_callback(msg):
-    angle_min = msg.angle_min  # Start angle of the scan
-    angle_increment = msg.angle_increment  # Angular distance between measurements
+class LidarSubscriber(Node):
+	
+	def __init__(self):
+		super().__init__('lidar_subscriber')
+		self.subscription = self.create_subscription(
+		LaserScan,
+		'/scan',
+		self.lidar_callback,
+		10)
+		self.subscription
+		
+	def lidar_callback(self, msg):
+		ranges = msg.ranges
+		print("left", ranges[810])
+		print("front", ranges[540])
 
-    # Calculate the index corresponding to the angle of 270 degrees
-    angle_desired = 270.0  # Angle in degrees
-    index = int((angle_desired - angle_min) / angle_increment)
 
-    # Check if the index is within valid range
-    if 0 <= index < len(msg.ranges):
-        # Access the range data for the object to the left of the lidar
-        range_to_left = msg.ranges[index]
-        print("Range to the left of the lidar: %.2f meters" % range_to_left)
-    else:
-        print("Invalid index. Angle may be outside the lidar's field of view.")
+def main(args=None):
+	rclpy.init()
+	lidar_subscriber = LidarSubscriber()
+	rclpy.spin(lidar_subscriber)
+	lidar_subscriber.destroy_node()
+	rclpy.shutdown()
+ 	
+if __name__ == '__main__':
+	main()
 
-
-def main():
-    rclpy.init()
-    node = rclpy.create_node('lidar_object_to_left')
-    subscription = node.create_subscription(LaserScan, '/scan', laser_scan_callback, 10)
-    rclpy.spin(node)
+		

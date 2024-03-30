@@ -42,6 +42,14 @@ class WallFollow(Node):
                 self.move_robot(0, .5)
                 print("front", front)
                 print("left", left)
+            elif .3 < left < .6:
+                self.move_robot(.1, -.1)
+            elif left > .6 and front > .4:
+                self.move_robot(.5, 0)
+                time.sleep(1)
+                self.move_robot(0, .5)
+                time.sleep(3)
+                self.move_robot(.5,0)
             else:
                 self.move_robot(.5, 0)
 

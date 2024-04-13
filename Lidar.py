@@ -10,7 +10,7 @@ robot = Create3(USB())
 
 
 async def ir_prox():
-    num = 0
+    num = 1
     sensors = (await robot.get_ir_proximity()).sensors
     sensor1 = sensors[0]
     sensor2 = sensors[1]

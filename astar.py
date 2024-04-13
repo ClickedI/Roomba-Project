@@ -54,7 +54,7 @@ def astar_search(grid, src, dest):
 
     visited_list = [[False for _ in range(max_col)] for _ in range(max_row)]
 
-    closed
+
 
 
 

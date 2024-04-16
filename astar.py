@@ -1,4 +1,3 @@
-import math
 import heapq
 
 
@@ -56,7 +55,7 @@ def trace_path(cell_details, dest):
 def astar_search(grid, src, dest):
 
     if not cell_isvalid(src[0], src[1]):
-        print ("Source is invalid")
+        print("Source is invalid")
         return
 
     if not cell_isvalid(dest[0], dest[1]):
@@ -110,7 +109,6 @@ def astar_search(grid, src, dest):
                     cell_list[new_r][new_c].parent_c = c
                     print("Destination cell found!")
                     trace_path(cell_list, dest)
-                    found_dest = True
                     return
                 else:
                     g_new = cell_list[r][c].cell_cost + 1.0

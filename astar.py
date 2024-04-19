@@ -12,6 +12,7 @@ class Cell:
 
 max_row = 9
 max_col = 10
+path = []
 
 
 def cell_isvalid(row, col):
@@ -30,10 +31,27 @@ def calculate_h_value(row, col, dest):
     return ((row - dest[0]) ** 2 + (col - dest[1]) ** 2) ** 0.5
 
 
-def trace_path(cell_details, dest):
+def print_grid_with_path(grid, path, dest, src):
+    src_row, src_col = src
+    dest_row, dest_col = dest
+    for i in range(len(grid)):
+        for j in range(len(grid[0])):
+            if (i, j) == src:
+                print("&", end=" ")
+            elif (i, j) == dest:
+                print("&", end=" ")
+            elif (i, j) in path:
+                print("*", end=" ")
+            elif grid[i][j] == 0:
+                print("#", end=" ")
+            else:
+                print(".", end=" ")
+        print()
+
+
+def trace_path(cell_details, dest, src):
 
     print("The path is ")
-    path = []
     row = dest[0]
     col = dest[1]
 
@@ -46,10 +64,6 @@ def trace_path(cell_details, dest):
 
     path.append((row, col))
     path.reverse()
-
-    for i in path:
-        print("->", i, end=" ")
-    print()
 
 
 def astar_search(grid, src, dest):
@@ -108,7 +122,7 @@ def astar_search(grid, src, dest):
                     cell_list[new_r][new_c].parent_r = r
                     cell_list[new_r][new_c].parent_c = c
                     print("Destination cell found!")
-                    trace_path(cell_list, dest)
+                    trace_path(cell_list, dest, src)
                     return
                 else:
                     g_new = cell_list[r][c].cell_cost + 1.0
@@ -144,6 +158,7 @@ def main():
     src = [2, 7]
     dest = [0, 0]
     astar_search(grid, src, dest)
+    print_grid_with_path(grid, path, dest, src)
 
 
 if __name__ == "__main__":

@@ -4,4 +4,4 @@ CSC212 Roomba project
 
 Group Project for CSC212 w/ Rob
 
-Our roomba algo is wall-following
+It uses a JPS algorithm along with wall following to navigate and clean a room efficiently. 

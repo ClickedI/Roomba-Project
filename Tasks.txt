@@ -1,0 +1,19 @@
+Rob:
+    - implement IR code to detect closer obstacles without lidar
+      (more accurate than lidar at detecting close obstacles)
+
+    - Improve wall following by adding smoothing or allowing the wall following algorithm to adjust to
+    the actual distance it is away from the wall rather than just detecting a specific distance
+
+
+
+Erick:
+
+    - Finish writing A* algorithm for pathfinding comparison demonstrations
+
+    - Finish writing JPS+ for main algo
+
+    - try an implement my code in Gazebo so we don't have to actually show the real robot at the
+    conference
+
+    - Review code Rob uploads, make comments

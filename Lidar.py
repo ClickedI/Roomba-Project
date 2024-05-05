@@ -1,8 +1,24 @@
 import rclpy
 from rclpy.node import Node
-from sensor_msgs.msg import LaserScan
 from geometry_msgs.msg import Twist
+from sensor_msgs.msg import LaserScan
 import time
+robot = Create3(USB())
+
+
+async def ir_prox():
+    num = 1
+    sensors = (await robot.get_ir_proximity()).sensors
+    sensor1 = sensors[0]
+    sensor2 = sensors[1]
+    sensor3 = sensors[2]
+    sensor4 = sensors[3]
+    sensor5 = sensors[4]
+    sensor6 = sensors[5]
+    sensor7 = sensors[6]
+    sensor8 = sensors[7]
+    if sensors[0:7] > num:
+        exit(2)
 
 
 class WallFollow(Node):
@@ -14,6 +30,7 @@ class WallFollow(Node):
             '/scan',
             self.lidar_callback,
             10)
+
         self.publisher_ = self.create_publisher(
             Twist,
             '/cmd_vel',

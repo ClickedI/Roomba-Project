@@ -1,9 +1,10 @@
+
 import rclpy
 from rclpy.node import Node
 from geometry_msgs.msg import Twist
 from sensor_msgs.msg import LaserScan
 import time
-robot = Create3(USB())
+
 
 
 async def ir_prox():
@@ -68,26 +69,33 @@ class WallFollow(Node):
 
     def lidar_callback(self, msg):
         ranges = msg.ranges
-        front = ranges[475:625]
+        front = ranges[500:600]
         left = ranges[810]
         error = self.desired_distance - left
 
-        # Check for corner
-        if min(front) - left > self.corner_threshold and self.wall_following_active:
+        # Check for obstacle
+        if min(front) < self.obstacle_threshold:
+            # If obstacle detected, adjust behavior for obstacle avoidance
+            self.move_robot(self.obstacle_avoidance_speed, -0.5)  # Move away from the obstacle
             self.wall_following_active = False
-            self.move_robot(self.corner_turn_speed, self.corner_turn_angle)
         else:
-            # Continue wall following if no corner
-            if self.wall_following_active:
+            # Continue wall following if no obstacle
+            self.wall_following_active = True
+            # Check for corner
+            if min(front) - left > self.corner_threshold:
+                self.move_robot(self.corner_turn_speed, self.corner_turn_angle)
+            else:
+                # Continue wall-following behavior
                 linear_speed = max(self.min_speed, self.max_speed - abs(error * self.speed_gain))
                 angle = self.pid_control(error)
-                self.move_robot(linear_speed, angle)
 
-        # Obstacle avoidance
-        if min(front) < self.obstacle_threshold:
-            self.wall_following_active = False
-            self.move_robot(0, -0.5)  # Turn away from the obstacle
-            self.move_robot(self.obstacle_avoidance_speed, 0)  # Continue moving forward
+                # Check for approaching wall
+                if min(front) < self.desired_distance *2:  # Adjust the multiplier as needed
+                    # Turn at a 90-degree angle
+                    self.move_robot(0, .5)  # Stop linear motion and turn at full speed
+                    time.sleep(1)  # Adjust the sleep duration as needed to turn 90 degrees
+                else:
+                    self.move_robot(linear_speed, angle)
 
 
     def move_robot(self, speed, angle):

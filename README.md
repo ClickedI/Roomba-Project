@@ -20,7 +20,7 @@ Begin by plugging a mouse and keyboard into your Raspberry Pi 4 and connect it t
 ```
 ifconfig
 ```
-Under wlan look for the ip address labeled inet and record it somewhere. This ip will vary depending on what network you are on so it is important to keep track of it as you need it to SSH into the Raspberry Pi.
+Under **wlan** look for the ip address labeled inet and record it somewhere. This ip will vary depending on what network you are on so it is important to keep track of it as you need it to SSH into the Raspberry Pi.
 ![ip address location](https://www.mbtechworks.com/wp-uploads/ifconfig-1.jpg)
 
 ***Install Ros2***  
@@ -46,7 +46,7 @@ sudo apt install ros-humble-twist-mux
 ```
 The Twist-mux tool multiplexes multiple twist topics into one singular output.
 ```
-Finally install the Cyclone DDS implementation:
+Install Cyclone DDS:
 ```
 sudo apt install ros-humble-rmw-cyclonedds-cpp
 ```
@@ -59,4 +59,10 @@ sudo apt install ros-humble-rmw-cyclonedds-cpp
 -Finish by reinserting the cargo bay panel and everything is hooked up!
 
 ### Running the code
+
+
+
+
+
+
 To run code unzip and launch create3.py then launch Lidar.py. To view JPS and A* examples simply run the JPS and A* python files. Implimentation of the JPS and A* algorithms using the robot was impossible given the resources available. 

@@ -44,13 +44,19 @@ Then install the tool twist-mux
 ```
 sudo apt install ros-humble-twist-mux
 ```
-The Twist-mux tool multiplexes multiple twist topics into one singular output.
+The Twist-mux tool multiplexes multiple twist topics into one singular output.  
+  
+Create a Directory:
 ```
-Install Cyclone DDS:
+mkdir create3_ws
 ```
-sudo apt install ros-humble-rmw-cyclonedds-cpp
+Enter the directory by running:
 ```
-
+cd create3_ws
+```
+and run:
+```
+git clone 
 ### Connecting Everything
 -Begin by mounting the LiDAR atop the Create 3 robot.
 -In the rear of the robot you can remove the back panel revealing the cargo bay, on the bottom of this panel you will mount the Raspberry Pi.

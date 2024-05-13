@@ -18,7 +18,7 @@ To properly run our program you will need the following:
 ### Setup & Software
 Begin by plugging a mouse and keyboard into your Raspberry Pi 4 and connect it to a monitor using a micro-usb to HDMI cable and connect to the internet. Open a terminal and run:
 ```
-ip a
+ifconfig
 ```
 Under wlan look for the ip address labeled inet and record it somewhere. This ip will vary depending on what network you are on so it is important to keep track of it as you need it to SSH into the Raspberry Pi.
 ![ip address location](https://www.mbtechworks.com/wp-uploads/ifconfig-1.jpg)

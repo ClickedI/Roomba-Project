@@ -21,7 +21,7 @@ Begin by plugging a mouse and keyboard into your Raspberry Pi 4 and connect it t
 ip a
 ```
 Under wlan look for the ip address labeled inet and record it somewhere. This ip will vary depending on what network you are on so it is important to keep track of it as you need it to SSH into the Raspberry Pi.
-![ip address location](https://cdn.learn.pimoroni.com/article/finding-your-raspberry-pi/assets/pi-find-ip-annotated.jpg?width=800)
+![ip address location](https://www.mbtechworks.com/wp-uploads/ifconfig-1.jpg)
 
 ***Install Ros2***  
 Step 1 is installing the Robot Operating System 2 Humble software whose documentation and installation instructions can be found [here](https://docs.ros.org/en/humble/Installation.html).

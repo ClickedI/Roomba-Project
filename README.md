@@ -4,7 +4,7 @@
 
 Our main goal is to optimize the coverage area of traditional vacuuming robots. We do so by combining a wall-following algorithm with Jump Point Search that allows for total room coverage.
 
-![JPS+ in action](https://media.springernature.com/lw685/springer-static/image/chp%3A10.1007%2F978-981-99-0479-2_267/MediaObjects/539027_1_En_267_Fig10_HTML.png)
+![Wall-Follow in action]([https://media.springernature.com/lw685/springer-static/image/chp%3A10.1007%2F978-981-99-0479-2_267/MediaObjects/539027_1_En_267_Fig10_HTML.png](https://miro.medium.com/v2/resize:fit:1400/1*M_PVImuRHfmaRUEiW3Yijw.png)) ![JPS+ in action](https://media.springernature.com/lw685/springer-static/image/chp%3A10.1007%2F978-981-99-0479-2_267/MediaObjects/539027_1_En_267_Fig10_HTML.png)
 
 ## Getting Started
 

@@ -16,7 +16,7 @@ To properly run our program you will need the following:
 - External computer used to SSH into the Raspberry Pi
 
 ### Setup & Software
-***Install Ros2*** </n>
+***Install Ros2*** (U+000A)
 Begin by installing the Robot Operating System 2 Humble software whose documentation and installation instructions can be found [here](https://docs.ros.org/en/humble/Installation.html).
 
 ***Install SLAM Toolbox***

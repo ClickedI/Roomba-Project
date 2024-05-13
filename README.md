@@ -24,7 +24,7 @@ Under wlan look for the ip address labeled inet and record it somewhere. This ip
 ![ip address location](https://www.mbtechworks.com/wp-uploads/ifconfig-1.jpg)
 
 ***Install Ros2***  
-Step 1 is installing the Robot Operating System 2 Humble software whose documentation and installation instructions can be found [here](https://docs.ros.org/en/humble/Installation.html).
+Step 1 is installing the Robot Operating System 2 Humble software whose documentation and installation instructions can be found [here](https://docs.ros.org/en/humble/Installation.html).  
 ![Ros2 Humble](https://docs.ros.org/en/humble/_static/humble-small.png)  
 
 ***Install SLAM Toolbox***  

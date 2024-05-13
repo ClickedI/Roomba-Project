@@ -44,9 +44,11 @@ Then install the tool twist-mux
 ```
 sudo apt install ros-humble-twist-mux
 ```
-The Twist-mux tool multiplexes multiple twist topics into one singular output.  
+The Twist-mux tool multiplexes multiple twist topics into one singular output.
+>[!NOTE]
+>These steps should also be followed on your external computer as you will need to run Rviz (robot visualiser) on your computer as well.
   
-Create a Directory:
+Create a new directory:
 ```
 mkdir create3_ws
 ```
@@ -56,7 +58,14 @@ cd create3_ws
 ```
 and run:
 ```
-git clone 
+git clone https://github.com/ClickedI/Roomba-Project.git
+```
+The last step is to build and source:
+```
+colcon build --symlink-install
+source ~/create3_ws/install/setup.bash
+```
+
 ### Connecting Everything
 -Begin by mounting the LiDAR atop the Create 3 robot.
 -In the rear of the robot you can remove the back panel revealing the cargo bay, on the bottom of this panel you will mount the Raspberry Pi.
@@ -65,8 +74,7 @@ git clone
 -Finish by reinserting the cargo bay panel and everything is hooked up!
 
 ### Running the code
-
-
+Power on the Create3 Robot by connecting it to its charging dock and follow [these steps](https://edu.irobot.com/create3-setup) to connect it to your network. Once completed on your external computer 
 
 
 

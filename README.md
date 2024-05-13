@@ -21,7 +21,7 @@ Begin by installing the Robot Operating System 2 Humble software whose documenta
 
 ***Install SLAM Toolbox***  
 Install Slam toolbox using the command:  
-```sudo apt install ros-humble-slam-toolbox```  
+``sudo apt install ros-humble-slam-toolbox``  
 The documentation and instructions using SLAM Toolbox in tandem with the LiDAR scanner can be found [here](https://github.com/iRobotEducation/create3_examples/tree/humble/create3_lidar_slam).
 ### Connecting Everything
 Begin by mounting the LiDAR atop the Create 3 robot. In the rear of the robot you can remove the back panel revealing the cargo bay, on the bottom of this panel you will mount the Raspberry Pi. Once everything is securely mounted plug the lidar into one of the Pi's USB ports. Then plug the adapter into the robot's USB-C port (located towards the top of the cargo bay) followed by connecting the Pi to the adapter using a *small* ethernet cable. Finish by reinserting the cargo bay panel and everything is hooked up!

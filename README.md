@@ -96,5 +96,7 @@ Lidar.py is a program that executes a basic wall follow using a PID controller.
 
 To view JPS and A* examples simply run the JPS and A* python files using the commands
 ```
-python3 JPS
-Implimentation of the JPS and A* algorithms using the robot was impossible given the resources available. 
+python3 JPS.py
+python3 astar.py
+```
+Complete implimentation of the JPS+ and A* algorithms using the robot was nearly impossible given the resources available but with more finetuning could vastly improve upon cleaning area.

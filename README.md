@@ -22,7 +22,7 @@ ifconfig
 ```
 Under **wlan** look for the ip address labeled inet and record it somewhere. This ip will vary depending on what network you are on so it is important to keep track of it as you need it to SSH into the Raspberry Pi.
 ![ip address location](https://www.mbtechworks.com/wp-uploads/ifconfig-1.jpg)
->[!IMPORTANT]
+>[!WARNING]
 >Make sure to enable SSH in the Interfaces tab under Raspberry Pi Configuration in Preferences more detailed description [here](https://www.onlogic.com/blog/how-to-ssh-into-raspberry-pi/).
 
 ***Install Ros2***  
@@ -47,7 +47,7 @@ Then install the tool twist-mux
 sudo apt install ros-humble-twist-mux
 ```
 The Twist-mux tool multiplexes multiple twist topics into one singular output.
->[!NOTE]
+>[!IMPORTANT]
 >These steps should also be followed on your external computer as you will need to run Rviz (robot visualiser) on your computer as well.
   
 Create a new directory:
@@ -99,4 +99,5 @@ To view JPS and A* examples simply run the JPS and A* python files using the com
 python3 JPS.py
 python3 astar.py
 ```
-Complete implimentation of the JPS+ and A* algorithms using the robot was nearly impossible given the resources available but with more finetuning could vastly improve upon cleaning area.
+>[!CAUTION]
+>Complete implimentation of the JPS+ and A* algorithms using the robot was nearly impossible given the resources available but with more finetuning could vastly improve upon cleaning area.
